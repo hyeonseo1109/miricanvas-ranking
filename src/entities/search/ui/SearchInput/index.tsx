@@ -16,7 +16,7 @@ export const SearchInput = ({
   name: string;
   onNameChange: (value: string) => void;
   onRankChange: (value: number) => void;
-  onErrorChange: (value: boolean) => void;
+  onErrorChange: (value: string | null) => void;
 }) => {
   const handleSearch = () => {
     void checkRank(name, creator, onRankChange, onErrorChange);

@@ -9,22 +9,14 @@ export const ResultsContainer = ({
   creator: string;
   name: string;
   rank: number;
-  error: boolean;
+  error: string | null;
 }) => {
   return (
     <div className={styles.ResultsContainer}>
       <p className={styles.nameDescription}>
         {creator}님의 {name} 요소
       </p>
-      <p className={styles.rankingResult}>
-        {error
-          ? "오류 발생, 나중에 다시 시도해주세요."
-          : rank === -1
-            ? "순위 60위 안에 노출되지 않습니다."
-            : rank === 0
-              ? "검색어를 입력해주세요."
-              : `${rank}위`}
-      </p>
+      <p className={styles.rankingResult}>{!error ? `${rank}위` : error}</p>
     </div>
   );
 };

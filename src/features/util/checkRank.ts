@@ -6,7 +6,7 @@ export const checkRank = async (
   name: string,
   creator: string,
   onRankChange: (value: number) => void,
-  onErrorChange: (value: boolean) => void,
+  onErrorChange: (value: string | null) => void,
 ) => {
   const data = await getResults(name);
   const premiumData = data.premiumData;
@@ -24,8 +24,14 @@ export const checkRank = async (
 
   const rank = mergedData.findIndex((item) => item.licenseName === creator);
 
-  if (rank) {
-    onErrorChange(false);
+  if (!rank) {
+    onErrorChange("오류 발생. 잠시후 다시 시도해주세요.");
+  } else if (!name || !creator) {
+    onErrorChange("검색어를 모두 입력해주세요.");
+  } else if (rank === -1) {
+    onErrorChange("요소가 순위 60위 안에 노출되지 않습니다.");
+  } else {
+    onErrorChange(null);
     onRankChange(rank);
-  } else onErrorChange(true);
+  }
 };

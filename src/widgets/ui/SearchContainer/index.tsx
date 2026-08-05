@@ -1,13 +1,19 @@
 import { SearchInput } from "@entities/search/ui";
 import * as styles from "./style.css";
 import { ResultsContainer } from "@entities/results/ui/ResultsContainer";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 export const SearchContainer = () => {
   const [creator, setCreator] = useState<string>("");
   const [name, setName] = useState<string>("");
   const [rank, setRank] = useState<number>(0);
-  const [error, setError] = useState<boolean>(false);
+  const [error, setError] = useState<string | null>(
+    "당신의 순위를 검색해보세요!",
+  );
+
+  useEffect(() => {
+    console.log("에러", error);
+  }, [error]);
 
   return (
     <div className={styles.searchContainer}>
