@@ -10,3 +10,12 @@ export const searchContainer = style({
   padding: "1rem",
   gap: "1rem",
 });
+
+export const descriptionText = style({
+  fontSize: "0.55rem",
+  color: "#8D94A5",
+  display: "flex",
+  flexDirection: "column",
+  textAlign: "center",
+  width: "100%",
+});
