@@ -1,8 +1,8 @@
-import { getResults } from "@features/hook/getResults";
+import { getResults } from "@features/hook";
 
 const chunkSize = 5;
 
-export const checkCreator = async (
+export const checkRank = async (
   name: string,
   creator: string,
   onRankChange: (value: number) => void,

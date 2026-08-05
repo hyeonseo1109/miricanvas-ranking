@@ -1,6 +1,6 @@
 import * as styles from "./style.css";
 import { SearchButton } from "../SearchButton";
-import { checkCreator } from "@features/util/checkCreator";
+import { checkRank } from "@features/util";
 
 export const SearchInput = ({
   creator,
@@ -33,7 +33,7 @@ export const SearchInput = ({
           onChange={(e) => onNameChange(e.target.value.trim())}
         />
       </div>
-      <SearchButton onClick={() => checkCreator(name, creator, onRankChange)} />
+      <SearchButton onClick={() => checkRank(name, creator, onRankChange)} />
     </div>
   );
 };
