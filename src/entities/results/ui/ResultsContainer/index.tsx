@@ -21,7 +21,7 @@ export const ResultsContainer = ({
           ? "오류 발생, 나중에 다시 시도해주세요."
           : rank === -1
             ? "순위 60위 안에 노출되지 않습니다."
-            : rank}
+            : `${rank}위`}
       </p>
     </div>
   );

@@ -1,6 +1,7 @@
 import * as styles from "./style.css";
 import { SearchButton } from "../SearchButton";
 import { checkRank } from "@features/util";
+import React from "react";
 
 export const SearchInput = ({
   creator,
@@ -17,6 +18,16 @@ export const SearchInput = ({
   onRankChange: (value: number) => void;
   onErrorChange: (value: boolean) => void;
 }) => {
+  const handleSearch = () => {
+    void checkRank(name, creator, onRankChange, onErrorChange);
+  };
+
+  const handleKeyDown = (event: React.KeyboardEvent<HTMLInputElement>) => {
+    if (event.key === "Enter") {
+      handleSearch();
+    }
+  };
+
   return (
     <div className={styles.searchBar}>
       <div className={styles.searchInputContainer}>
@@ -26,6 +37,7 @@ export const SearchInput = ({
           className={styles.searchInput}
           value={creator}
           onChange={(e) => onCreatorChange(e.target.value.trim())}
+          onKeyDown={handleKeyDown}
         />
         <input
           type="text"
@@ -33,11 +45,10 @@ export const SearchInput = ({
           className={styles.searchInput}
           value={name}
           onChange={(e) => onNameChange(e.target.value.trim())}
+          onKeyDown={handleKeyDown}
         />
       </div>
-      <SearchButton
-        onClick={() => checkRank(name, creator, onRankChange, onErrorChange)}
-      />
+      <SearchButton onClick={handleSearch} />
     </div>
   );
 };
