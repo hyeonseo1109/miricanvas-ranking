@@ -13,7 +13,7 @@ globalStyle("html, body", {
   margin: 0,
   padding: 0,
   width: "400px",
-  height: "300px",
+  height: "320px",
 });
 
 globalStyle("body", {
