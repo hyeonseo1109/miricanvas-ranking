@@ -32,6 +32,6 @@ export const checkRank = async (
     onErrorChange("요소가 순위 60위 안에 노출되지 않습니다.");
   } else {
     onErrorChange(null);
-    onRankChange(rank);
+    onRankChange(rank + 1);
   }
 };
