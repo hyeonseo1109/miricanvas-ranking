@@ -7,6 +7,7 @@ export const SearchContainer = () => {
   const [creator, setCreator] = useState<string>("");
   const [name, setName] = useState<string>("");
   const [rank, setRank] = useState<number>(0);
+  const [error, setError] = useState<boolean>(false);
 
   return (
     <div className={styles.searchContainer}>
@@ -16,8 +17,14 @@ export const SearchContainer = () => {
         name={name}
         onNameChange={setName}
         onRankChange={setRank}
+        onErrorChange={setError}
       />
-      <ResultsContainer creator={creator} name={name} rank={rank} />
+      <ResultsContainer
+        creator={creator}
+        name={name}
+        rank={rank}
+        error={error}
+      />
     </div>
   );
 };

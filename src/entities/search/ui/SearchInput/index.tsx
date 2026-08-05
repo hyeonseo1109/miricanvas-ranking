@@ -8,12 +8,14 @@ export const SearchInput = ({
   name,
   onNameChange,
   onRankChange,
+  onErrorChange,
 }: {
   creator: string;
   onCreatorChange: (value: string) => void;
   name: string;
   onNameChange: (value: string) => void;
   onRankChange: (value: number) => void;
+  onErrorChange: (value: boolean) => void;
 }) => {
   return (
     <div className={styles.searchBar}>
@@ -33,7 +35,9 @@ export const SearchInput = ({
           onChange={(e) => onNameChange(e.target.value.trim())}
         />
       </div>
-      <SearchButton onClick={() => checkRank(name, creator, onRankChange)} />
+      <SearchButton
+        onClick={() => checkRank(name, creator, onRankChange, onErrorChange)}
+      />
     </div>
   );
 };

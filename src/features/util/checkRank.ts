@@ -6,6 +6,7 @@ export const checkRank = async (
   name: string,
   creator: string,
   onRankChange: (value: number) => void,
+  onErrorChange: (value: boolean) => void,
 ) => {
   const data = await getResults(name);
   const premiumData = data.premiumData;
@@ -21,8 +22,12 @@ export const checkRank = async (
     );
   }
 
-  const findRank = mergedData.findIndex((item) => item.licenseName === creator);
-  const rank = findRank === -1 ? null : findRank + 1;
+  const rank = mergedData.findIndex((item) => item.licenseName === creator);
 
-  if (rank) onRankChange(rank);
+  console.log("랭크", rank);
+
+  if (rank) {
+    onErrorChange(false);
+    onRankChange(rank);
+  } else onErrorChange(true);
 };
