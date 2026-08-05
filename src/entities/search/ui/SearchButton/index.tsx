@@ -1,3 +1,5 @@
+import * as styles from "./style.css";
+
 export const SearchButton = () => {
-  return <button>ㄱ</button>;
+  return <button className={styles.searchButton}>&rarr;</button>;
 };
