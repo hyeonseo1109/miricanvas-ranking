@@ -24,8 +24,6 @@ export const checkRank = async (
 
   const rank = mergedData.findIndex((item) => item.licenseName === creator);
 
-  console.log("랭크", rank);
-
   if (rank) {
     onErrorChange(false);
     onRankChange(rank);
