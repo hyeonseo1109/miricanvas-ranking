@@ -15,6 +15,7 @@ export const SearchContainer = () => {
         onCreatorChange={setCreator}
         name={name}
         onNameChange={setName}
+        onRankChange={setRank}
       />
       <ResultsContainer creator={creator} name={name} rank={rank} />
     </div>
