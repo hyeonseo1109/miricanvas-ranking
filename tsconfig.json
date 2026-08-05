@@ -10,6 +10,8 @@
     "moduleResolution": "Bundler",
     "skipLibCheck": true,
 
+    "types": ["vite/client"],
+
     "paths": {
       "@app/*": ["./src/app/*"],
       "@pages/*": ["./src/pages/*"],

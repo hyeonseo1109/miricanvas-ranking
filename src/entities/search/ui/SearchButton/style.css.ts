@@ -1,16 +1,16 @@
 import { style } from "@vanilla-extract/css";
 
 export const searchButton = style({
-  backgroundColor: "blue",
+  border: "1px solid #ffffff",
+  borderRadius: "0.5rem",
+  aspectRatio: "1/1",
+  height: "1.7rem",
+  textAlign: "center",
+  backgroundColor: "#21afbf",
   color: "white",
-  border: "none",
-  padding: "8px 16px",
-  borderRadius: "4px",
   cursor: "pointer",
-  fontSize: "16px",
-  transition: "background-color 0.3s ease",
-
   ":hover": {
-    backgroundColor: "darkblue",
+    backgroundColor: "#35becd",
   },
+  transition: "background-color 0.3s ease",
 });

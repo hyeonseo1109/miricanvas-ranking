@@ -5,8 +5,8 @@ export const mainPageContainer = style({
   flexDirection: "column",
   alignItems: "center",
   justifyContent: "center",
-  backgroundColor: "#f5f5f5",
   border: "1px solid #000000",
+  backgroundColor: "#F1F2F3",
   width: "100%",
   height: "100%",
 });
