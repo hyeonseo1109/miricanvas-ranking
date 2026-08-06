@@ -14,7 +14,7 @@ export const ResultsContainer = ({
   return (
     <div className={styles.ResultsContainer}>
       <p className={styles.nameDescription}>
-        {creator}님의 {name} 요소
+        {creator === "" ? "당신" : `${creator}님`}의 {name} 요소
       </p>
       <p className={styles.rankingResult}>{!error ? `${rank}위` : error}</p>
     </div>
