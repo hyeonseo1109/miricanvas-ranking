@@ -29,7 +29,7 @@ export const checkRank = async (
   } else if (!name || !creator) {
     onErrorChange("검색어를 모두 입력해주세요.");
   } else if (rank === -1) {
-    onErrorChange("요소가 순위 60위 안에 노출되지 않습니다.");
+    onErrorChange("요소가 순위 200위 안에 노출되지 않습니다.");
   } else {
     onErrorChange(null);
     onRankChange(rank + 1);

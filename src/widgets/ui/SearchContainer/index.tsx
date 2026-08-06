@@ -33,7 +33,7 @@ export const SearchContainer = () => {
       />
       <div className={styles.descriptionText}>
         <p>가장 우선순위인 요소 한 개를 표시합니다.</p>
-        <p>순위가 60위보다 낮을 경우 표시되지 않습니다.</p>
+        <p>순위가 200위보다 낮을 경우 표시되지 않습니다.</p>
       </div>
     </div>
   );

@@ -1,6 +1,6 @@
 {
   "manifest_version": 3,
-  "name": "미리캔버스 요소 상위노출 순위",
+  "name": "요소 상위노출 순위 검색기 for 미리캔버스",
   "version": "1.0.0",
   "description": "요소와 작가 이름을 검색하여 노출 순위를 조회합니다.",
   "action": {
